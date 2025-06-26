@@ -2,6 +2,7 @@ package response
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -60,4 +61,18 @@ func NoAuth(message string, c *gin.Context) {
 
 func FailWithDetailed(data interface{}, message string, c *gin.Context) {
 	Result(ERROR, data, message, c)
+}
+
+func EquCount(data map[string]int64, c *gin.Context) {
+	c.JSON(http.StatusOK, Response{
+		0,
+		map[string]interface{}{
+			"total":      data["total"],
+			"online":     data["online"],
+			"offline":    data["offline"],
+			"disabled":   data["disabled"],
+			"updateTime": time.Now().Format(time.DateTime),
+		},
+		"成功",
+	})
 }

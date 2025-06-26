@@ -6,6 +6,11 @@ const routes = [
     redirect: '/login'
   },
   {
+    path: '/',
+    redirect: 'Map',
+    component: () => import('@/view/geography/geography.vue'),
+  },
+  {
     path: '/init',
     name: 'Init',
     component: () => import('@/view/init/index.vue')
@@ -23,6 +28,15 @@ const routes = [
       client: true
     },
     component: () => import('@/view/example/upload/scanUpload.vue')
+  },
+  {
+    path: '/equManage',
+    name: 'EquManage',
+    meta: {
+      title: '设备列表',
+      client: true
+    },
+    component: () => import('@/view/good/equManage/equManage.vue')
   },
   {
     path: '/:catchAll(.*)',

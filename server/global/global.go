@@ -30,7 +30,7 @@ var (
 	GVA_MONGO     *qmgo.QmgoClient
 	GVA_CONFIG    config.Server
 	GVA_VP        *viper.Viper
-	// GVA_LOG    *oplogging.Logger
+	//GVA_LOG    *oplogging.Logger
 	GVA_LOG                 *zap.Logger
 	GVA_Timer               timer.Timer = timer.NewTimerTask()
 	GVA_Concurrency_Control             = &singleflight.Group{}

@@ -13,11 +13,6 @@
         :class="isMobile ? '' : 'min-w-48'"
         @click="router.push({ path: '/' })"
       >
-        <img
-          alt
-          class="h-12 bg-white rounded-full"
-          :src="$GIN_VUE_ADMIN.appLogo"
-        />
         <div
           v-if="!isMobile"
           class="inline-flex font-bold text-2xl ml-2"
