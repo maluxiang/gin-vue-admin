@@ -186,8 +186,8 @@ qiniu:
     use-cdn-domains: false
 redis:
     name: ""
-    addr: 127.0.0.1:6379
-    password: ""
+    addr: 14.103.235.214:6379
+    password: "1D50C54763E4C280FC6419DA944E3CB4"
     db: 0
     useCluster: false
     clusterAddrs:
@@ -196,8 +196,8 @@ redis:
         - 172.21.0.2:7002
 redis-list:
     - name: cache
-      addr: 127.0.0.1:6379
-      password: ""
+      addr: 14.103.235.214:6379
+      password: "1D50C54763E4C280FC6419DA944E3CB4"
       db: 0
       useCluster: false
       clusterAddrs:

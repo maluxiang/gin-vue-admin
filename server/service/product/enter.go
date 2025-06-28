@@ -1,4 +1,3 @@
 package product
 
-type ServiceGroup struct {
-}
+type ServiceGroup struct{ EquAddressService }

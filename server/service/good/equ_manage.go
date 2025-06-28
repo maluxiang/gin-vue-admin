@@ -2,11 +2,13 @@ package good
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/good"
 	goodReq "github.com/flipped-aurora/gin-vue-admin/server/model/good/request"
 	"gorm.io/gorm"
+	"strconv"
 	"time"
 )
 
@@ -94,6 +96,13 @@ func (equManageService *EquManageService) GetEquManageInfoList(ctx context.Conte
 	var equManages []good.EquManage
 	// 如果有条件搜索 下方会自动创建搜索语句
 
+	result, _ := global.GVA_RDS.Get(context.Background(), "GetEquManageInfoList"+strconv.Itoa(limit)).Result()
+	if result != "" {
+		json.Unmarshal([]byte(result), &equManages)
+
+		return equManages, total, err
+	}
+
 	err = db.Count(&total).Error
 	if err != nil {
 		return
@@ -104,6 +113,10 @@ func (equManageService *EquManageService) GetEquManageInfoList(ctx context.Conte
 	}
 
 	err = db.Find(&equManages).Error
+
+	marshal, _ := json.Marshal(equManages)
+	global.GVA_RDS.Set(context.Background(), "GetEquManageInfoList"+strconv.Itoa(limit), marshal, time.Hour*5)
+
 	return equManages, total, err
 }
 

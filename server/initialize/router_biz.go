@@ -20,7 +20,13 @@ func initBizRouter(routers ...*gin.RouterGroup) {
 		goodRouter.InitGoodAccountRouter(privateGroup, publicGroup)
 		goodRouter.InitEquManageRouter(privateGroup, publicGroup)
 		goodRouter.InitEquGroupRouter(privateGroup, publicGroup)
-		goodRouter.InitAlarmManageRouter(privateGroup, publicGroup) // 占位方法，保证文件可以正确加载，避免go空变量检测报错，请勿删除。
+		goodRouter.InitAlarmManageRouter(privateGroup, publicGroup)
 		goodRouter.InitCertificateRouter(privateGroup, publicGroup)
 	}
+	{
+		productRouter := router.RouterGroupApp.Product
+		productRouter.InitEquAddressRouter(privateGroup, publicGroup)
+	}
 }
+
+// 占位方法，保证文件可以正确加载，避免go空变量检测报错，请勿删除。

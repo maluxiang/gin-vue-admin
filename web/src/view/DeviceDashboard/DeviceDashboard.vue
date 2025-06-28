@@ -83,13 +83,7 @@ import { onMounted, ref } from 'vue'
 import * as echarts from 'echarts'
 
 // 模拟数据（实际需对接接口）
-const deviceStats = ref({
-  total: 15360,
-  active: 15325,
-  inactive: 35,
-  online: 15210,
-  offline: 115
-})
+const deviceStats = ref({})
 const msgStats = ref({
   monthTotal: 286360,
   dayData: [20, 30, 10, 50, 40, 60, 30, 70, 100] // 当日消息数据

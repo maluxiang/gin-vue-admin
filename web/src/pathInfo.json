@@ -1,5 +1,6 @@
 {
   "/src/view/about/index.vue": "About",
+  "/src/view/addressdateil/addressdateil.vue": "Addressdateil",
   "/src/view/CustomLogin.vue": "CustomLogin",
   "/src/view/dashboard/components/banner.vue": "Banner",
   "/src/view/dashboard/components/card.vue": "Card",
@@ -56,6 +57,8 @@
   "/src/view/layout/tabs/index.vue": "HistoryComponent",
   "/src/view/login/index.vue": "Login",
   "/src/view/person/person.vue": "Person",
+  "/src/view/product/equAddress/equAddress.vue": "DeviceAddress",
+  "/src/view/product/equAddress/equAddressForm.vue": "EquAddressForm",
   "/src/view/routerHolder.vue": "RouterHolder",
   "/src/view/superAdmin/api/api.vue": "Api",
   "/src/view/superAdmin/authority/authority.vue": "Authority",
